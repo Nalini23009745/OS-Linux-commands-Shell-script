@@ -43,23 +43,28 @@ s.n. dasgupta
 cat < file1
 ## OUTPUT
 
+![image](https://github.com/gowriganeshns/OS-Linux-commands-Shell-script/assets/149347484/afd3b853-0190-49ab-9f3a-31d9ea61a6b3)
 
 
 cat < file2
 ## OUTPUT
+![image](https://github.com/gowriganeshns/OS-Linux-commands-Shell-script/assets/149347484/36053378-79e1-4d11-b883-fe614c88a8d5)
 
 
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
- 
+ ![image](https://github.com/gowriganeshns/OS-Linux-commands-Shell-script/assets/149347484/934d0fdf-967d-4119-bb7f-8f2d52d1fdc7)
+
 comm file1 file2
  ## OUTPUT
+![image](https://github.com/gowriganeshns/OS-Linux-commands-Shell-script/assets/149347484/d86c55c6-97b1-4e33-921d-e8980071b9f7)
 
  
 diff file1 file2
 ## OUTPUT
 
+![image](https://github.com/gowriganeshns/OS-Linux-commands-Shell-script/assets/149347484/740568a5-e5ca-4115-97a9-f9116a072572)
 
 #Filters
 
@@ -83,11 +88,13 @@ cat > file22
 cut -c1-3 file11
 ## OUTPUT
 
+![image](https://github.com/gowriganeshns/OS-Linux-commands-Shell-script/assets/149347484/da05a552-ea2e-442b-8213-a0f36b53992b)
 
 
 
 cut -d "|" -f 1 file22
 ## OUTPUT
+![image](https://github.com/gowriganeshns/OS-Linux-commands-Shell-script/assets/149347484/f2532931-4ac9-403f-96b7-3cacb6b2ffbe)
 
 
 
