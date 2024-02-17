@@ -42,20 +42,21 @@ s.n. dasgupta
 ### Display the content of the files
 cat < file1
 ## OUTPUT
-
+...
 chanchal singhvi
 c.k. shukla
 s.n. dasgupta
 sumit chakrobarty
-
+...
 cat < file2
 ## OUTPUT
+...
 anil aggarwal
 barun sengupta
 c.k.shukla
 lalit chowdury
 s.n.gupta
-
+...
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
@@ -101,6 +102,7 @@ cut -c1-3 file11
 
 cut -d "|" -f 1 file22
 ## OUTPUT
+![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/9b214c39-51c8-4512-b6ae-51ea258f542a)
 
 
 
@@ -120,6 +122,7 @@ hello world
  
 grep Hello newfile 
 ## OUTPUT
+![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/8f0580a1-f097-42d0-8b9c-6168520a00dc)
 
 
 
