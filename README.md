@@ -43,22 +43,34 @@ s.n. dasgupta
 cat < file1
 ## OUTPUT
 
-
+chanchal singhvi
+c.k. shukla
+s.n. dasgupta
+sumit chakrobarty
 
 cat < file2
 ## OUTPUT
-
+anil aggarwal
+barun sengupta
+c.k.shukla
+lalit chowdury
+s.n.gupta
 
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
+![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/494f5b43-8917-494e-9cb3-e2cac7d5bc1e)
+
  
 comm file1 file2
  ## OUTPUT
+ ![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/b2e322e7-1e73-47f7-88e4-724a3bf9090e)
+
 
  
 diff file1 file2
 ## OUTPUT
+![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/2f343a72-d156-40fd-a48a-b0bd822b53db)
 
 
 #Filters
@@ -83,6 +95,7 @@ cat > file22
 cut -c1-3 file11
 ## OUTPUT
 
+![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/8bbc60c6-3e21-4b5e-99ed-2a2f36bb389c)
 
 
 
