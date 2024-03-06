@@ -1157,6 +1157,15 @@ done
 $ chmod 777 argshift.sh
 ## OUTPUT
 $ ./argshift.sh 1 2 3
+cat argshift.sh
+```bash
+#!/bin/bash 
+set -x 
+while (( "$#" )); do 
+  echo $1 
+  shift 
+done
+set +x
  
 cat argshift.sh
 ```bash
@@ -1170,7 +1179,8 @@ set +x
 ```
 ## OUTPUT
  ./argshift.sh 1 2 3
- 
+ + (( 0 ))
+ + set +x
  
 cat > nc.awk
 ```bash
@@ -1201,7 +1211,10 @@ ubcdfghj
 ```
 awk -f nc.awk data.dat
 ## OUTPUT 
- 
+  total characters 75
+Number of Lines are 10
+No of Words count: 10 
+
 cat > palindrome.sh
 ```bash
 #num=545
@@ -1228,7 +1241,12 @@ else
 fi
 ```
 ## OUTPUT 
-
+Enter the number
+121
+Number is palindrome
+Enter the number
+69
+Number is NOT palindrome
 
 # RESULT:
 The Commands are executed successfully.
