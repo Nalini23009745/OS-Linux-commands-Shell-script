@@ -59,19 +59,37 @@ s.n.gupta
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
-![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/494f5b43-8917-494e-9cb3-e2cac7d5bc1e)
-
+file1 file2 differ: char 1, line 1
  
 comm file1 file2
  ## OUTPUT
- ![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/b2e322e7-1e73-47f7-88e4-724a3bf9090e)
+    anil aggarwal
+        barun sengupta
+        c.k.shukla
+chanchal singhvi
+c.k. shukla
+        lalit chowdury
+s.n. dasgupta
+        s.n.gupta
+sumit chakrobarty
 
 
  
 diff file1 file2
 ## OUTPUT
-![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/2f343a72-d156-40fd-a48a-b0bd822b53db)
-
+--- file1
++++ file2
+@@ -1,5 +1,5 @@
+-
+-chanchal singhvi
+-c.k. shukla
+-s.n. dasgupta
+-sumit chakrobarty
++anil aggarwal
++barun sengupta
++c.k.shukla
++lalit chowdury
++s.n.gupta
 
 #Filters
 
@@ -94,20 +112,23 @@ cat > file22
 
 cut -c1-3 file11
 ## OUTPUT
-
-![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/8bbc60c6-3e21-4b5e-99ed-2a2f36bb389c)
-
+Hel
+Thi
 
 
 cut -d "|" -f 1 file22
 ## OUTPUT
-![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/9b214c39-51c8-4512-b6ae-51ea258f542a)
+1001 
+1002 
+1003 
 
 
 
 cut -d "|" -f 2 file22
 ## OUTPUT
-
+Ram 
+tom 
+Joe 
 
 cat < newfile 
 ```
@@ -121,41 +142,67 @@ hello world
  
 grep Hello newfile 
 ## OUTPUT
-![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/8f0580a1-f097-42d0-8b9c-6168520a00dc)
+Hello world
 
 
 
 grep hello newfile 
 ## OUTPUT
-
+hello world
 
 
 
 grep -v hello newfile 
 ## OUTPUT
-
+Hello world
 
 
 cat newfile | grep -i "hello"
 ## OUTPUT
-
+Hello world
+hello world
 
 
 
 cat newfile | grep -i -c "hello"
 ## OUTPUT
-
-
+2
 
 
 grep -R ubuntu /etc
 ## OUTPUT
-
+Search for PATTERN in FILEs (or stdin)
+ 
+        -H      Add 'filename:' prefix
+        -h      Do not add 'filename:' prefix
+        -n      Add 'line_no:' prefix
+        -l      Show only names of files that match
+        -L      Show only names of files that don't match
+        -c      Show only count of matching lines
+        -o      Show only the matching part of line
+        -q      Quiet. Return 0 if PATTERN is found, 1 otherwise
+        -v      Select non-matching lines
+        -s      Suppress open and read errors
+        -r      Recurse
+        -i      Ignore case
+        -w      Match whole words only
+        -x      Match whole lines only
+        -F      PATTERN is a literal (not regexp)
+        -E      PATTERN is an extended regexp
+        -m N    Match up to N times per file
+        -A N    Print N lines of trailing context
+        -B N    Print N lines of leading context
+        -C N    Same as '-A N -B N'
+        -e PTRN Pattern to match
+        -f FILE Read pattern from file
 
 
 grep -w -n world newfile   
 ## OUTPUT
-
+Search for PATTERN in FILEs (or stdin)
+1:Hello world
+2:hello world
+        
 
 cat < newfile 
 ```
@@ -178,60 +225,69 @@ Linux is best in this World
  ```
 egrep -w 'Hello|hello' newfile 
 ## OUTPUT
-
+Hello world
+hello world
 
 
 egrep -w '(H|h)ello' newfile 
 ## OUTPUT
-
+Hello world
+hello world
 
 
 egrep -w '(H|h)ell[a-z]' newfile 
 ## OUTPUT
-
+Hello world
+hello world
 
 
 
 egrep '(^hello)' newfile 
 ## OUTPUT
-
+hello world
 
 
 egrep '(world$)' newfile 
 ## OUTPUT
-
+Hello world
+hello world
 
 
 egrep '(World$)' newfile 
 ## OUTPUT
-
+Linux is best in this World
 
 egrep '((W|w)orld$)' newfile 
 ## OUTPUT
-
+Hello world
+hello world
+Linux is best in this World
 
 
 egrep '[1-9]' newfile 
 ## OUTPUT
-
+Linux is world number 1
 
 
 egrep 'Linux.*world' newfile 
 ## OUTPUT
-
+Linux is world number 1
 
 egrep 'Linux.*World' newfile 
 ## OUTPUT
-
+Linux is best in this World
 
 egrep l{2} newfile
 ## OUTPUT
-
+Hello world
+hello world
 
 
 egrep 's{1,2}' newfile
 ## OUTPUT 
-
+Linux is world number 1
+Unix is predecessor
+Linux is best in this World
 
 cat > file23
 ```
@@ -249,80 +305,132 @@ cat > file23
 
 sed -n -e '3p' file23
 ## OUTPUT
-
+1002 | tom |  5000 | Admin
 
 
 sed -n -e '$p' file23
 ## OUTPUT
-
+1001 | Ram | 10000 | HR
 
 
 sed  -e 's/Ram/Sita/' file23
 ## OUTPUT
-
+1001 | Sita | 10000 | HR
+1001 | Sita | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
+1003 | Joe |  7000 | Developer
+1001 | Sita | 10000 | HR
 
 
 sed  -e '2s/Ram/Sita/' file23
 ## OUTPUT
-
+1001 | Ram | 10000 | HR
+1001 | Sita | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
+1003 | Joe |  7000 | Developer
+1001 | Ram | 10000 | HR
 
 
 sed  '/tom/s/5000/6000/' file23
 ## OUTPUT
-
+1001 | Ram | 10000 | HR
+1001 | Ram | 10000 | HR
+1002 | tom |  6000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
+1003 | Joe |  7000 | Developer
+1001 | Ram | 10000 | HR
 
 
 sed -n -e '1,5p' file23
 ## OUTPUT
-
+1001 | Ram | 10000 | HR
+1001 | Ram | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
 
 
 sed -n -e '2,/Joe/p' file23
 ## OUTPUT
-
+1001 | Ram | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
 
 
 
 sed -n -e '/tom/,/Joe/p' file23
 ## OUTPUT
-
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
 
 
 seq 10 
 ## OUTPUT
-
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
 
 
 seq 10 | sed -n '4,6p'
 ## OUTPUT
-
+4
+5
+6
 
 
 seq 10 | sed -n '2,~4p'
 ## OUTPUT
-
+2
+3
+4
 
 
 seq 3 | sed '2a hello'
 ## OUTPUT
-
+1
+2
+hello
+3
 
 
 seq 2 | sed '2i hello'
 ## OUTPUT
-
+1
+hello
+2
 
 seq 10 | sed '2,9c hello'
 ## OUTPUT
-
+1
+hello
+10
 
 sed -n '2,4{s/^/$/;p}' file23
 ## OUTPUT
-
+$1001 | Ram | 10000 | HR
+$1002 | tom |  5000 | Admin
+$1003 | Joe |  7000 | Developer
 
 
 sed -n '2,4{s/$/*/;p}' file23
-
+1001 | Ram | 10000 | HR*
+1002 | tom |  5000 | Admin*
+1003 | Joe |  7000 | Developer*
 
 #Sorting File content
 cat > file21
@@ -335,7 +443,11 @@ cat > file21
 ``` 
 sort file21
 ## OUTPUT
-
+1001 | Ram | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1004 | Sit |  7000 | Dev
+1005 | Sam |  5000 | HR
 
 cat > file22
 ```
@@ -348,13 +460,25 @@ cat > file22
 ``` 
 uniq file22
 ## OUTPUT
-
+1001 | Ram | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
 
 
 #Using tr command
 
 cat file23 | tr [:lower:] [:upper:]
  ## OUTPUT
+1001 | RAM | 10000 | HR
+1001 | RAM | 10000 | HR
+1002 | TOM |  5000 | ADMIN
+1003 | JOE |  7000 | DEVELOPER
+1005 | SAM |  5000 | HR
+1004 | SIT |  7000 | DEV
+1003 | JOE |  7000 | DEVELOPER
+1001 | RAM | 10000 | HR
 
 cat < urllist.txt
 ```
@@ -371,12 +495,16 @@ www. mrcet.... com
  ```
 cat urllist.txt | tr -d ' '
  ## OUTPUT
-
+www.yahoo.com
+www.google.com
+www.mrcet....com
 
  
 cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
-
+www.yahoo.com
+www.google.com
+www.mrcet.com
 
 
 #Backup commands
