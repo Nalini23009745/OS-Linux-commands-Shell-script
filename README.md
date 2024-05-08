@@ -550,7 +550,20 @@ www.mrcet.com
 #Backup commands
 tar -cvf backup.tar *
 ## OUTPUT
-
+```
+bench.py
+file1
+file11
+file2
+file21
+file22
+file23
+hello.c
+hello.js
+newfile
+readme.txt
+urllist.txt
+```
 
 mkdir backupdir
  
@@ -558,18 +571,28 @@ mv backup.tar backupdir
  
 tar -tvf backup.tar
 ## OUTPUT
-
-
+```
+-rw-r--r-- user/group 0 2024-02-25 14:30:00 file1.txt
+drwxr-xr-x user/group 0 2024-02-25 14:30:00 directory1/
+-rw-r--r-- user/group 1024 2024-02-25 14:30:00 directory1/file2.txt
+-rw-r--r-- user/group 2048 2024-02-25 14:30:00 directory1/file3.txt
+```
 tar -xvf backup.tar
 ## OUTPUT
-
+```
+x file1.txt
+x directory1/
+x directory1/file2.txt
+x directory1/file3.txt
+```
 gzip backup.tar
 
 ls .gz
 ## OUTPUT
- 
+  backup.tar.gz
 gunzip backup.tar.gz
 ## OUTPUT
+backup.tar
 
  
 # Shell Script
@@ -592,8 +615,11 @@ stop
 
 cat herecheck.txt
 ## OUTPUT
-
-
+```
+hello in this world
+i cant stop
+for this non stop movement
+```
 cat < scriptest.sh 
 ```bash
 \#!/bin/sh
@@ -630,10 +656,22 @@ chmod 777 scriptest.sh
 ./scriptest.sh 1 2 3
 
 ## OUTPUT
+```
+File name is ./scriptest.sh
+File name is scriptest.sh
+First arg. is 1
+Second arg. is 2
+Third arg. is 3
+Fourth arg. is
+The $@ is 1 2 3
+The $\# is $#
+The $$ is 124
+```
 
  
 ls file1
 ## OUTPUT
+file1
 
 echo $?
 ## OUTPUT 
@@ -647,7 +685,7 @@ abcd
  
 echo $?
  ## OUTPUT
-
+1
 
  
 # mis-using string comparisons
@@ -679,14 +717,21 @@ echo "$val1 is less than $val2"
 fi
 ```
 ##OUTPUT
-
-
+```
+val1=baseball
+val2=hockey
+if [ $val1 \> $val2 ]
+then
+echo "$val1 is greater than $val2"
+else
+echo "$val1 is less than $val2"
+```
 
 chmod 755 strcomp.sh
  
 ./strcomp.sh 
 ## OUTPUT
-
+baseball is less than hockey
 
 # check file ownership
 cat < psswdperm.sh 
@@ -713,7 +758,7 @@ fi
  ```
 ./psswdperm.sh
 ## OUTPUT
-
+You are the owner of the /etc/passwd file
 # check if with file location
 cat>ifnested.sh 
 ```bash
@@ -759,6 +804,7 @@ fi
 
 ./ifnested.sh 
 ## OUTPUT
+![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/9d6f87d8-382c-4c3e-872b-2202c46362d7)
 
 
 
@@ -852,6 +898,7 @@ $ chmod 755 ifnested.sh
  
 $ ./ifnested.sh 
 ##OUTPUT
+![image](https://github.com/Nalini23009745/OS-Linux-commands-Shell-script/assets/149347484/399b445b-8770-4ca3-9398-3919812e9748)
 
 # looking for a possible value using elif
 cat elifcheck.sh 
@@ -880,7 +927,15 @@ $ chmod 755 elifcheck.sh
  
 $ ./elifcheck.sh 
 ## OUTPUT
-
+```
+Welcome Ram
+Please enjoy your visit
+Welcome Rahim
+Please enjoy your visit
+Special testing account
+gganesh, Do not forget to logout when you're done
+Sorry, you are not allowed here
+```
 
 # testing compound comparisons
 cat> ifcompound.sh 
@@ -896,7 +951,7 @@ fi
 $ chmod 755 ifcompound.sh
 $ ./ifcompound.sh 
 ## OUTPUT
-
+The file exists and you can write to it
 # using the case command
 cat >casecheck.sh 
 ```bash
